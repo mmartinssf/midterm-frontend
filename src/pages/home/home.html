@@ -1,0 +1,68 @@
+<ion-header color="primary">
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Home Page</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<!--<ion-content padding>-->
+<!--  <h3>Ionic Menu Starter</h3>-->
+
+<!--  <p>-->
+<!--    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.-->
+<!--  </p>-->
+
+<!--  <button ion-button secondary menuToggle>Toggle Menu</button>-->
+<!--</ion-content>-->
+
+
+
+
+<!--<ion-footer color="primary">-->
+<!--  <ion-toolbar color="primary">-->
+<!--    <ion-icon center name="barcode">Scan Item!</ion-icon>-->
+<!--  </ion-toolbar>-->
+<!--</ion-footer>-->
+
+<!--<ion-footer color="primary">   -->
+<!--<ion-toolbar color="primary">-->
+<!--<button ion-button>-->
+<!--  <ion-icon full icon-center name="ios-barcode-outline"></ion-icon>-->
+<!--  Scan Item!-->
+<!--</button>-->
+<!--</ion-toolbar>-->
+<!--</ion-footer>-->
+
+<ion-content>
+
+    <!--<ion-card>-->
+    <!--    <img [src]="urlVariable" />-->
+    <!--    <ion-card-content>-->
+    <!--        <ion-card-title>-->
+
+    <!--            {{ name }}-->
+    <!--        </ion-card-title>-->
+    <!--        <p>-->
+    <!--            Energy: {{ energy }}-->
+    <!--        </p>-->
+    <!--    </ion-card-content>-->
+    <!--</ion-card>-->
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <form (ngSubmit)="scan()">
+            <ion-item>
+                <ion-label class="label" floating>Enter Barcode Or Scan Item</ion-label>
+                <ion-input type="text" [(ngModel)]="barcode" name="barcode"></ion-input>
+            </ion-item>
+            <button ion-button block>
+           <ion-icon name="barcode-outline" type="submit">  Scan Item!</ion-icon>
+       
+     </button>
+        </form>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,38 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-item-group>
+      <ion-item-divider color="light">Navigate</ion-item-divider>
+      <ion-item no-lines menuClose *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name='{{ p.icon }}'></ion-icon>
+        {{ p.title }}
+      </ion-item>
+      
+
+      <ion-item-divider color="light">Account</ion-item-divider>
+      <ion-item no-lines menuClose *ngFor="let a of accounts" (click)="openPage(a)">
+        <ion-icon name='{{ a.icon }}'></ion-icon>
+        {{ a.title }}
+      </ion-item>
+
+    </ion-item-group>
+  </ion-content>
+
+
+<!--********************  FOOTER     ******************************-->
+  <!--<ion-footer>-->
+  <!--  <ion-toolbar>-->
+  <!--<button ion-button color="primary" full (click)="logout()">  Logout</button>-->
+  <!--  </ion-toolbar>-->
+  <!--</ion-footer>-->
+  
+  
+</ion-menu>
+
+Disable swipe-to-go-back because it's poor UX to combine STGB with side menus
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>-->

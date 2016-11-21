@@ -1,0 +1,73 @@
+<ion-header color="primary">
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ this.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!--<ion-card>-->
+  <!-- <img [src]='this.url' />-->
+  <!--  <ion-card-content>-->
+  <!--    <ion-card-title>-->
+
+       
+  <!--    </ion-card-title>-->
+  <!--    <p>-->
+  <!--      Energy: {{ this.energy }}-->
+  <!--    </p>-->
+  <!--    <p>-->
+  <!--       Name:  {{ this.name }}-->
+  <!--    </p>-->
+  <!--  </ion-card-content>-->
+  <!--</ion-card>-->
+  
+  <ion-card>
+  <img [src]='this.url' />
+  </ion-card>
+  
+  <ion-card>
+  <ion-card-content>
+      You would have to run {{ this.miles }} miles to burn the {{ this.calories }}
+      calories gained from eating this item.
+  </ion-card-content>
+</ion-card>
+
+<!--<button ion-button button-left>-->
+<!--  <ion-icon></ion-icon>-->
+<!--  Left Icon-->
+<!--</button>-->
+
+<!--<button ion-button button-right>-->
+<!--  Right Icon-->
+<!--  <ion-icon></ion-icon>-->
+<!--</button>-->
+
+<ion-item>
+  <ion-icon name="ios-walk-outline" item-left></ion-icon>
+  Running Total
+  <ion-icon (click)="addMiles()" name="ios-add-outline" item-right></ion-icon>
+  <ion-badge item-right>{{ this.total }} miles</ion-badge>
+</ion-item>
+  
+  
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <form (ngSubmit)="resultsScan()">
+            <ion-item>
+                <ion-label class="label" floating>Enter Barcode Or Scan Item</ion-label>
+                <ion-input type="text" [(ngModel)]="barcode" name="barcode"></ion-input>
+            </ion-item>
+            <button ion-button block>
+           <ion-icon name="barcode-outline" type="submit">  Scan Item!</ion-icon>
+       
+     </button>
+        </form>
+    </ion-toolbar>
+</ion-footer>
