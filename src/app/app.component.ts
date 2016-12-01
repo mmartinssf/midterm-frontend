@@ -9,8 +9,7 @@ import 'rxjs/add/operator/map';
 //Pages
 import { Landing } from '../pages/landing/landing';
 import { Home } from '../pages/home/home';
-import { History } from '../pages/history/history';
-import { Profile } from '../pages/profile/profile';
+import { Settings } from '../pages/settings/settings';
 import { Logout } from '../pages/logout/logout';
 
 
@@ -35,12 +34,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { icon: 'md-home', title: 'Home', component: Home },
-      { icon: 'md-timer', title: 'History', component: History }
+      { icon: 'home', title: 'Home', component: Home }
+      //{ icon: 'md-timer', title: 'History', component: History }
     ],
     this.accounts = [
-      { icon: 'md-contact', title: 'Profile', component: Profile },
-      { icon: 'md-log-out', title: 'Logout', component: Logout }
+      { icon: 'settings', title: 'Settings', component: Settings },
+      { icon: 'log-out', title: 'Logout', component: Logout }
     ];
 
   }

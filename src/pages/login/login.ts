@@ -16,9 +16,10 @@ export class Login {
   
   user = {}
 
-  constructor(public navCtrl: NavController,
-              public appUser: Appusers,
-              public storage: Storage) {}
+  constructor(
+    public navCtrl: NavController,
+    public appUser: Appusers,
+    public storage: Storage) {}
 
   ionViewDidLoad() {
     console.log('Hello LoginPage Page');

@@ -3,19 +3,18 @@
         <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home Page</ion-title>
+        <ion-title>Nutritional Facts Page</ion-title>
     </ion-navbar>
 </ion-header>
 
 
-
 <ion-content>
-   <template [ngIf]="show"> 
+    
 <section class="performance-facts">
   <header class="performance-facts__header">
     <h1 class="performance-facts__title">Nutrition Facts</h1>
     <p>Serving Size {{ this.servingSize }}
-    <p>Serving Per Container {{ this.serPerContainer }}</p>
+    <p>Serving Per Container {{ this.servings }}</p>
   </header>
   <table class="performance-facts__table">
     <thead>
@@ -158,25 +157,5 @@
   
   
 </section>
-</template>
-</ion-content>
 
-<ion-footer>
-    <ion-toolbar no-lines>
-        
-        <ion-item no-lines class="center" color="primary">
-        <ion-icon name="walk-outline"></ion-icon>
-        Running Total: {{ this.total }} miles
-        </ion-item>
-       
-    <form (ngSubmit)="scan()">
-        <ion-item>
-            <ion-label floating class="label">Enter Barcode Or Scan Item</ion-label>
-            <ion-input type="text" [(ngModel)]="barcode" name="barcode"></ion-input>
-        </ion-item>
-        <button ion-button full>
-           <ion-icon name="barcode-outline" type="submit">  Scan Item!</ion-icon>
-     </button>
-    </form>
-    </ion-toolbar>
-</ion-footer>
+</ion-content>

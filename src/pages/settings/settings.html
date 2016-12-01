@@ -1,0 +1,38 @@
+<ion-header color="primary">
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>{{ gender }}</ion-label>
+      <ion-select [(ngModel)]="user.gender">
+        <ion-option value="female">Female</ion-option>
+        <ion-option value="male">Male</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pace</ion-label>
+      <ion-select [(ngModel)]="user.pace">
+        <ion-option value="walk">Walk</ion-option>
+        <ion-option value="run">Run</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Weight</ion-label>
+      <ion-input type="text" [(ngModel)]="user.weight" name="weight" placeholder="in pounds" onfocus="this.placeholder = ''" text-right></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

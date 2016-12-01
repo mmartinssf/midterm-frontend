@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController  } from 'ionic-angular';
 import { Appusers } from '../../providers/appusers';
 import { Storage } from '@ionic/storage';
 import { Home } from '../home/home';
@@ -17,14 +17,15 @@ export class Register {
   user = {
     firstName: '',
     lastName: '',
-    organization: '',
+    weight: '',
     email: '',
     password: ''
   }
 
   constructor(public navCtrl: NavController,
               public appUser: Appusers,
-              public storage: Storage) {}
+              public storage: Storage,
+              public alertCtrl: AlertController) {}
 
   ionViewDidLoad() {
     console.log('Hello RegisterPage Page');
@@ -48,6 +49,9 @@ export class Register {
       err => { 
         alert(err)
       });
-    }
+  }
+  
 
 }
+
+

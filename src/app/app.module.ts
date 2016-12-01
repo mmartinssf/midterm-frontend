@@ -8,15 +8,14 @@ import { Storage } from '@ionic/storage';
 //Services
 import { Appusers } from '../providers/appusers';
 import { FactService } from '../providers/fact-service';
+import { UserData } from '../providers/user-data';
 
 //Pages
 import { Home } from '../pages/home/home';
 import { Landing } from '../pages/landing/landing';
 import { Login } from '../pages/login/login';
 import { Register } from '../pages/register/register';
-import { History } from '../pages/history/history';
-import { Results } from '../pages/results/results';
-import { Profile } from '../pages/profile/profile';
+import { Settings } from '../pages/settings/settings';
 import { Sample } from '../pages/sample/sample';
 import { Logout } from '../pages/logout/logout';
 
@@ -26,9 +25,7 @@ const INJECTIONS = [
   Landing,
   Login,
   Register,
-  History,
-  Results,
-  Profile,
+  Settings,
   Logout
   ]
 
@@ -43,6 +40,6 @@ const INJECTIONS = [
   entryComponents: [
     INJECTIONS
   ],
-  providers: [Appusers, FactService, Storage]
+  providers: [Appusers, FactService, UserData, Storage]
 })
 export class AppModule {}

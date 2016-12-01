@@ -9,18 +9,10 @@ import { Results } from '../pages/results/results';
 @Injectable()
 
 export class Appusers {
+  private url = 'https://ng2-backend-martinssf.c9users.io/api/APP_Users';
   
-  //History Services
-  results = []
+  userData = []
   
-  //Answer Services
-  answers = {
-    userID: 'string',
-    calories: 'number',
-    createDate: 'date'
-  }
-  
-  choices = []
 
   constructor(private http: Http) {
     console.log('Hello Appusers Provider');
@@ -42,30 +34,27 @@ export class Appusers {
     return this.http.post('https://ng2-backend-martinssf.c9users.io:8080/api/APP_Users/logout', {}, { headers: auth } );
   }
   
-  //History Services
-  accessHistory(token,userID) {
+  saveTotal (token, total) {
     let auth = new Headers();
     auth.append('Authorization', token);
-    return this.http.get('https://ng2-backend-martinssf.c9users.io/api/Histories?filter[where][userID]=' + userID);
+    return this.http.post('https://ng2-backend-martinssf.c9users.io/api/Running_Totals?access_token=' + token, total, { headers: auth } );
   }
   
-  saveHistoryResults(data) {
-    this.results = data.slice(0,data.length);
+  //Get user weight and daily total
+  // accessUserValues(token, userID) {
+  //   let auth = new Headers();
+  //   auth.append('Authorization', token);
+  //   //auth.append('Accept', 'application/json');
+  //   // auth.append('Content-Type', 'application/json');
+  //   return this.http.get('https://ng2-backend-martinssf.c9users.io/api/APP_Users?filter[where][userID]=' + userID);
+  // }
+  
+  accessUserData(token,userID) {
+    let auth = new Headers();
+    auth.append('Authorization', token);
+    return this.http.get(this.url + '?filter[where][userID]=' + userID);
   }
   
-  grabHistoryResults() {
-    return this.results;
-  }
-  
-  //Answer Services
-  saveAnswer(id,choice) {
-    this.choices[id-1] = choice;
-    console.log(this.choices);
-  }
-  
-  loadAnswer(results) {
-    this.answers = results;
-  }
   
 
 
